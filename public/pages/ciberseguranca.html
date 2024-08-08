@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ciberancanca.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <section id="ciberseguranca">
+        <div>
+            <h1>A cibersegurança e o direito digital </h1>
+            <p>
+                São essenciais para a proteção de dados pessoais em um mundo digitalizado, onde as ameaças cibernéticas são cada vez mais comuns. A adoção de medidas preventivas, como softwares de segurança e senhas fortes, é crucial para garantir a privacidade e a segurança dos usuários. Além disso, as empresas devem ser responsabilizadas por falhas na proteção de dados, pois a falta de responsabilidade pode prejudicar tanto os usuários quanto a reputação das próprias organizações.
+            </p>
+
+        </div>
+        <img id="imagemCiberseguranca" src="../images/image-pages/image-cyber-full.png" alt="">
+    </section>
+
+    <section>
+        <p>
+            A legislação sobre cibersegurança também precisa ser constantemente atualizada para lidar com a evolução das ameaças digitais, abordando temas como crimes cibernéticos e a responsabilidade dos provedores de serviços. Assim, uma legislação clara é fundamental para proteger os direitos individuais e coletivos no ambiente virtual.
+        </p>
+        <p>
+            Em resumo, a cibersegurança é um desafio que envolve aspectos técnicos, éticos e legais, exigindo a colaboração de toda a sociedade. A educação digital, a responsabilização das empresas e a atualização das leis são fundamentais para criar um ambiente online seguro e confiável, onde os direitos dos usuários sejam respeitados.
+        </p>
+    </section>
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        var texts = '0123456789'.split('');
+        var fontSize = 4;
+        var columns = canvas.width/fontSize;
+        var drops = [];
+        for(var x =0; x < columns; x++){
+            drops[x] = 1;
+        }
+
+        function draw(){
+            ctx.fillStyle = 'rgba(0,0,0,0.05)';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize+ 'px arial';
+            for(var i =0; i < drops.length; i++){
+                var text = texts[Math.floor(Math.random()*texts.length)];
+                ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+                if(drops[i]*fontSize > canvas.height || Math.random() > 0.95){
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw,33);
+    </script>
+</body>
+</html>
