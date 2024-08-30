@@ -32,6 +32,47 @@ body{
     font-size: 24px;
 }
 
+#section-complementar{
+    font-family: 'Poppins';
+    display: flex;
+    align-items: center;
+    margin: 0px 10px 0px 10px;
+}
+footer{
+    margin-top: 30px;
+}
+footer p{
+    font-size: 12px;
+    font-family: 'Poppins';
+    text-align: center;
+}
+/* Botão flutuante */
+.botao-flutuante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #2a9d8f;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    line-height: 60px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+.botao-flutuante:hover {
+    background-color: #21867a;
+    transform: scale(1.1);
+}
+.botao-flutuante:active{
+    color: #0c0c0c;
+}
+
+
+
 @media (max-width: 768px) {
     #imagemCiberseguranca {
         content: url('../images/image-pages/image-cyber-small.png');
@@ -48,7 +89,7 @@ body{
         margin: 0px 0px 0px 0px;
     }
     
-    #ciberseguranca p{
+    #ciberseguranca p, #section-complementar p{
         font-size: 14px;
     }
     
